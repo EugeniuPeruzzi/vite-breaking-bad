@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-    <div class="kard my-2 rounded-4"
+    <div class="kard my-3 rounded-4"
         :class="myPokemonList.type1 === 'Grass' ? 'grass' : myPokemonList.type1 === 'Fire' ? 'fire' : myPokemonList.type1 === 'Water' ? 'water' : ''">
         <div class="kard-content d-flex align-items-center justify-content-center flex-column">
             <div class="img-container">
