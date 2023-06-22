@@ -19,7 +19,8 @@ export default {
   },
   mounted() {
     axios.get(store.apiUrl).then((response) => {
-      store.pokeDex = response.data.results;
+      store.pokeDex = response.data.docs;
+      console.log(store.pokeDex);
     })
   },
 }

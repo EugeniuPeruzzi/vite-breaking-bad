@@ -2,11 +2,12 @@
 export default {
 
 }
+
 </script>
 
 <template>
     <div>
-        <h1>Saro un Header</h1>
+
     </div>
 </template>
 
