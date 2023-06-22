@@ -1,5 +1,6 @@
 <script>
 export default {
+    // richiamo l'ogetto con props dal padre
     props: {
         myPokemonList: Object,
     }
@@ -8,6 +9,7 @@ export default {
 </script>
 
 <template>
+    <!-- creo la card con i dati richiesti estrapolandoli dal array -->
     <div class="kard my-3 rounded-4"
         :class="myPokemonList.type1 === 'Grass' ? 'grass' : myPokemonList.type1 === 'Fire' ? 'fire' : myPokemonList.type1 === 'Water' ? 'water' : ''">
         <div class="kard-content d-flex align-items-center justify-content-center flex-column">
