@@ -1,17 +1,34 @@
 <script>
-import AppHeader from './components/AppHeader.vue'
+import axios from 'axios';
+
+import AppHead from './components/AppHead.vue';
+import AppMain from './components/AppMain.vue';
+
+import { store } from './store.js';
 
 
 export default {
-  component: {
-    AppHeader,
-  }
+  components: {
+    AppHead,
+    AppMain,
+  },
+  data() {
+    return {
+      store,
+    }
+  },
+  mounted() {
+    axios.get(store.apiUrl).then((response) => {
+      store.pokeDex = response.data.results;
+    })
+  },
 }
 </script>
 
 <template>
   <div>
-    <AppHeader />
+    <AppHead />
+    <AppMain />
   </div>
 </template>
 
