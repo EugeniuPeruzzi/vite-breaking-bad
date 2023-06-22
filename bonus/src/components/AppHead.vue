@@ -7,7 +7,7 @@ export default {
 <template>
     <div>
         <div class="container py-4">
-            <div class="row h">
+            <div class="row h min-width">
                 <div class="col">
                     <div class="classes d-flex">
                         <div class="water dimension rounded-circle border border-light border-4"></div>
