@@ -24,6 +24,8 @@ export default {
     // con la chiamata axios collego il documento store al aray vuoto pokeDex
     axios.get(store.apiUrl).then((response) => {
       store.pokeDex = response.data.docs;
+      // aggiungo nel mounted il valore falso del loading 
+      store.loading = false
       console.log(store.pokeDex);
     })
   },

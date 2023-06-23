@@ -1,8 +1,9 @@
 <script>
 // importo poke card dove andro a inserire le card dei pokemon
 import PokemonCards from '../components/PokemonCards.vue';
+import AppLoader from './AppLoading.Vue'
 // importo il documento store
-import { store } from '../store';
+import { store } from '../store.js';
 export default {
     data() {
         return {
@@ -13,6 +14,7 @@ export default {
     components: {
         // utilizzo la componente Pokemon Cards
         PokemonCards,
+        AppLoader,
     }
 }
 
@@ -22,12 +24,13 @@ export default {
     <div>
         <!-- Creo la struttura html -->
         <div class="container grey-bckg p-5 rounded-4">
-            <div class="row black-bckg  py-3 h overflow-auto">
+            <div class="row black-bckg  py-3 h overflow-auto min-width" v-if="store.loading == false">
                 <!-- ciclo l'array di pokedex dandogli il valore di pokemonList poi a sua volta gli trasferisco il valore a myPokemonList cha passero a pokemon cards -->
-                <div class="col-6 col-md4 col-lg-3" v-for="(pokemoList, index) in store.pokeDex" :key="index">
+                <div class="col-6 col-md-4 col-lg-3" v-for="(pokemoList, index) in store.pokeDex" :key="index">
                     <PokemonCards :myPokemonList="pokemoList" />
                 </div>
             </div>
+            <AppLoader v-else />
         </div>
     </div>
 </template>
