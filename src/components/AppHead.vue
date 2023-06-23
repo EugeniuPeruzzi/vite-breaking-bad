@@ -1,6 +1,11 @@
 <script>
-export default {
+import AppSearch from './AppSearch.vue'
 
+
+export default {
+    components: {
+        AppSearch,
+    },
 }
 </script>
 
@@ -15,6 +20,9 @@ export default {
                         <div class="eletric dimension rounded-circle border border-light border-4"></div>
                         <div class="grass dimension rounded-circle border border-light border-4"></div>
                     </div>
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                    <AppSearch />
                 </div>
             </div>
         </div>
@@ -56,5 +64,9 @@ export default {
 .grass {
     background: rgb(255, 255, 255);
     background: linear-gradient(150deg, rgba(255, 255, 255, 1) 22%, rgba(46, 246, 3, 1) 64%, rgba(8, 101, 0, 1) 94%);
+}
+
+.c {
+    background-color: purple;
 }
 </style>

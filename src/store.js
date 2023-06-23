@@ -6,4 +6,5 @@ export const store = reactive({
     // array vuoto da popolare
     pokeDex: [],
     loading: true,
+    pokeType: ''
 });
