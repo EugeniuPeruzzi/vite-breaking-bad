@@ -6,26 +6,6 @@ export default {
     data() {
         return {
             store,
-            allTypes: [
-                "Bug",
-                "Dark",
-                "Dragon",
-                "Electric",
-                "Fairy",
-                "Fighting",
-                "Fire",
-                "Flying",
-                "Ghost",
-                "Grass",
-                "Ground",
-                "Ice",
-                "Normal",
-                "Poison",
-                "Psychic",
-                "Rock",
-                "Steel",
-                "Water"
-            ]
         }
     }
 }
@@ -43,11 +23,11 @@ export default {
                         <div class="grass dimension rounded-circle border border-light border-4"></div>
                     </div>
                 </div>
-                <div class="col-2 d-flex justify-content-end">
+                <div class="col-2 d-flex justify-content-end py-4">
                     <select class="form-select" aria-label="Default select example" v-model="store.pokeType"
                         @change="$emit('typeChange')">
                         <option value="" selected>Select</option>
-                        <option v-for="(type, index) in allTypes" :key="index" :value="type">{{ type }}</option>
+                        <option v-for="(type, index) in store.allTypes" :key="index" :value="type">{{ type }}</option>
                     </select>
                 </div>
             </div>

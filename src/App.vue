@@ -25,13 +25,13 @@ export default {
   },
   methods: {
     getPokemon() {
-      let myUrl = store.apiUrl;
+      store.myUrl = store.apiUrl;
 
       if (store.pokeType !== '') {
-        myUrl = + `&[type1] = ${store.pokeType}`
+        store.myUrl += `&eq[type1]=${store.pokeType}`
       }
 
-      axios.get(store.apiUrl).then((response) => {
+      axios.get(store.myUrl).then((response) => {
         store.pokeDex = response.data.docs;
         store.loading = false
         console.log(store.pokeDex);
@@ -44,7 +44,7 @@ export default {
 <template>
   <!-- Uso i template  -->
   <div>
-    <AppHead @typeChange=getPokemon />
+    <AppHead @typeChange="getPokemon" />
     <AppMain />
   </div>
 </template>
