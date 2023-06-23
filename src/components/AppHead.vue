@@ -44,7 +44,8 @@ export default {
                     </div>
                 </div>
                 <div class="col-2 d-flex justify-content-end">
-                    <select class="form-select" aria-label="Default select example" v-model="store.pokeType">
+                    <select class="form-select" aria-label="Default select example" v-model="store.pokeType"
+                        @change="$emit('typeChange')">
                         <option value="" selected>Select</option>
                         <option v-for="(type, index) in allTypes" :key="index" :value="type">{{ type }}</option>
                     </select>

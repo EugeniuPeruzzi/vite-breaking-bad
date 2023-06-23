@@ -27,8 +27,8 @@ export default {
     getPokemon() {
       let myUrl = store.apiUrl;
 
-      if (store.apiUrl !== '') {
-        myUrl = + `?type1${store.pokeType}`
+      if (store.pokeType !== '') {
+        myUrl = + `&[type1] = ${store.pokeType}`
       }
 
       axios.get(store.apiUrl).then((response) => {
@@ -44,7 +44,7 @@ export default {
 <template>
   <!-- Uso i template  -->
   <div>
-    <AppHead />
+    <AppHead @typeChange=getPokemon />
     <AppMain />
   </div>
 </template>
