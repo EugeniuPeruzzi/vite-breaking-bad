@@ -1,11 +1,33 @@
 <script>
-import AppSearch from './AppSearch.vue'
-
+import { store } from '../store.js';
 
 export default {
-    components: {
-        AppSearch,
-    },
+
+    data() {
+        return {
+            store,
+            allTypes: [
+                "Bug",
+                "Dark",
+                "Dragon",
+                "Electric",
+                "Fairy",
+                "Fighting",
+                "Fire",
+                "Flying",
+                "Ghost",
+                "Grass",
+                "Ground",
+                "Ice",
+                "Normal",
+                "Poison",
+                "Psychic",
+                "Rock",
+                "Steel",
+                "Water"
+            ]
+        }
+    }
 }
 </script>
 
@@ -22,7 +44,10 @@ export default {
                     </div>
                 </div>
                 <div class="col-2 d-flex justify-content-end">
-                    <AppSearch />
+                    <select class="form-select" aria-label="Default select example" v-model="store.pokeType">
+                        <option value="" selected>Select</option>
+                        <option v-for="(type, index) in allTypes" :key="index" :value="type">{{ type }}</option>
+                    </select>
                 </div>
             </div>
         </div>
