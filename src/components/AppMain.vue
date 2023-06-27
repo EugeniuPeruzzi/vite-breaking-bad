@@ -1,7 +1,7 @@
 <script>
 // importo poke card dove andro a inserire le card dei pokemon
 import PokemonCards from '../components/PokemonCards.vue';
-import AppLoader from './AppLoading.Vue'
+import AppLoader from './AppLoading.vue'
 // importo il documento store
 import { store } from '../store.js';
 export default {
